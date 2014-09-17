@@ -1,5 +1,7 @@
 # Study project with JPA persistence
 
+In a professional application is not good to call an EntityManager in a class with a main method. So we separate the class of JPA connection of the other classes.
+
 This is a project for study of jo features JPA
 Feel free to fork, change, modify and re-use it.
 
