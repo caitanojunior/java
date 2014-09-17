@@ -35,10 +35,14 @@ public class EvidenceGenerator {
             entityManager.persist(question2);
             entityManager.getTransaction().commit();
             entityManager.close();
-            
+
             System.out.println("Ok! Successfully inserted data  in the database.");
         } catch (Exception e) {
             System.err.println("Erro >>> " + e.getMessage());
+        } finally {
+            if (entityManager.isOpen()) {
+                entityManager.close();
+            }
         }
     }
 
