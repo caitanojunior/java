@@ -1,4 +1,4 @@
-package evidencegenerator;
+package model;
 
 import java.io.Serializable;
 import java.util.ArrayList;

@@ -1,7 +1,9 @@
-package evidencegenerator;
+package controller;
 
 import javax.persistence.EntityManager;
-import connection.JpaUtil;
+import dao.JpaUtil;
+import model.Alternative;
+import model.Question;
 
 /**
  *
