@@ -1,5 +1,6 @@
 package evidencegenerator;
 
+import javax.persistence.EntityManager;
 import connection.JpaUtil;
 
 /**
@@ -23,15 +24,15 @@ public class EvidenceGenerator {
         question2.addAlternativesWrong(new Alternative("six"));
         question2.setCorrectAlternative(new Alternative("eight"));
 
-        JpaUtil conn = new JpaUtil();
+        EntityManager entityManager = JpaUtil.getEntityManager();
 
         try {
 
-            conn.getEntityManager().getTransaction().begin();
-            conn.getEntityManager().persist(question1);
-            conn.getEntityManager().persist(question2);
-            conn.getEntityManager().getTransaction().commit();
-            conn.getEntityManager().close();
+            entityManager.getTransaction().begin();
+            entityManager.persist(question1);
+            entityManager.persist(question2);
+            entityManager.getTransaction().commit();
+            entityManager.close();
             
             System.out.println("Ok! Successfully inserted data  in the database.");
         } catch (Exception e) {
